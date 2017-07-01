@@ -20,6 +20,14 @@
         </form>
 
         
-          
+          <%
+	Cookie c[] = request.getCookies() ;	// 取得客户端的全部Cookie
+	System.out.println(c) ;
+	for(int x=0;x<c.length;x++){
+%>
+		<h3><%=c[x].getName()%> --> <%=c[x].getValue()%></h3>
+<%
+	}
+%>
     </body>
 </html>

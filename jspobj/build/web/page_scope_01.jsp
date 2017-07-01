@@ -25,5 +25,22 @@
         
          <h1><%=user%></h1>
          <h1><%=userbir%></h1>
+         
+         <%
+	Cookie c[] = request.getCookies() ;	// È¡µÃ¿Í»§¶ËµÄÈ«²¿Cookie
+	System.out.println(c) ;
+	for(int x=0;x<c.length;x++){
+%>
+		<h3><%=c[x].getName()%> --> <%=c[x].getValue()%></h3>
+<%
+	}
+%>
+
+<%
+	String dbDriver = config.getInitParameter("driver") ;
+	String dbUrl = config.getInitParameter("url") ;
+%>
+<h3>驱动程序：<%=dbDriver%></h3>
+<h3>连接地址：<%=dbUrl%></h3>
     </body>
 </html>
